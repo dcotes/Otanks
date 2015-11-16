@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116065746) do
+ActiveRecord::Schema.define(version: 20151116212143) do
 
   create_table "health_workers", force: :cascade do |t|
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "phoneNumber"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "locations", force: :cascade do |t|
@@ -29,9 +29,18 @@ ActiveRecord::Schema.define(version: 20151116065746) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tanks", force: :cascade do |t|
+  create_table "patients", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "tanks_used"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tanks", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "serial_number"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,6 +48,15 @@ ActiveRecord::Schema.define(version: 20151116065746) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone_number"
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.string   "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
