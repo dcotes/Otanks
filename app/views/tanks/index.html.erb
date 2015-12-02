@@ -1,0 +1,14 @@
+<h1>Tanks</h1>
+
+<div class="tanks">
+  <div class="container">
+  
+    <% @tanks.each do |tank| %> 
+      <div class="tank"> 
+        <p class="id"><%= tank.id %></p> 
+        <p class="created_at"><%= tank.created_at %></p> 
+      </div> 
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<h1>Patients</h1>
+
+<div class="tanks">
+  <div class="container">
+  
+    <% @patients.each do |patient| %> 
+      <div class="patient"> 
+        <p class="id"><%= patient.id %></p> 
+        <p class="first_name"><%= patient.first_name %></p> 
+        <p class="last_name"><%= patient.last_name %></p> 
+        <p class="tanks_used"><%= patient.tanks_used %></p> 
+        <p class="created_at"><%= patient.created_at %></p> 
+        <p class="updated_at"><%= patient.updated_at %></p> 
+      </div> 
+    <% end %>
+
+  </div>
+</div>

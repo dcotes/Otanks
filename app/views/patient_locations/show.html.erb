@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @patient_location.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @patient_location.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @patient_location.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_patient_location_path(@patient_location) %> |
+<%= link_to 'Back', patient_locations_path %>
