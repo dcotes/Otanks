@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117085558) do
+ActiveRecord::Schema.define(version: 20151202020406) do
 
   create_table "patient_locations", force: :cascade do |t|
     t.string   "address"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20151117085558) do
     t.float    "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "patient_id"
   end
+
+  add_index "patient_locations", ["patient_id"], name: "index_patient_locations_on_patient_id"
 
   create_table "patients", force: :cascade do |t|
     t.string   "first_name"
@@ -30,11 +33,14 @@ ActiveRecord::Schema.define(version: 20151117085558) do
   end
 
   create_table "tanks", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "serial_number"
     t.string   "capacity"
+    t.integer  "patient_location_id"
   end
+
+  add_index "tanks", ["patient_location_id"], name: "index_tanks_on_patient_location_id"
 
   create_table "user_locations", force: :cascade do |t|
     t.string   "address"
@@ -42,7 +48,10 @@ ActiveRecord::Schema.define(version: 20151117085558) do
     t.float    "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "user_locations", ["user_id"], name: "index_user_locations_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
