@@ -1,2 +1,38 @@
 <h1>Ohtanks!</h1>
 
+<p>THE MAP GOES HERE :)</p>
+
+<h3>table</h3>
+
+
+<table>
+    <thead>
+        <tr>
+            <th align="center">Patient</th> 
+            <th align="center">Address</th> 
+            <th align="center">Tanks</th>           
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <% @patients.each do |patient| %> 
+            <td><%= patient.first_name %><%= patient.last_name %></td>
+            <td><%= patient.location.address %></td>
+            <td>
+              <ul>
+              <% patient.location.tanks.each do |tank| %>
+                <li>
+                tank <%= tank %>
+                <% if tank.nil? %>
+                  <p>None</p>
+                <% else %>
+                   <%= tank.capacity %>
+              <%  end %>
+              </li>
+              <% end %>
+              </ul>
+            </td>
+        <% end %>
+        </tr>
+   </tbody>
+</table>

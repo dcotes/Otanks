@@ -1,0 +1,20 @@
+<h1>Users</h1>
+
+<div class="users">
+  <div class="container">
+  
+    <% @users.each do |user| %> 
+      <div class="patient"> 
+        <p class="id"><%= user.id %></p> 
+        <p class="username"><%= user.username %></p> 
+        <p class="first_name"><%= user.first_name %></p> 
+        <p class="last_name"><%= user.last_name %></p> 
+        <p class="phone_number"><%= user.phone_number %></p> 
+        <p class="visit_id"><%= user.visit_id %></p> 
+        <p class="created_at"><%= user.created_at %></p> 
+        <p class="updated_at"><%= user.updated_at %></p> 
+      </div> 
+    <% end %>
+
+  </div>
+</div>

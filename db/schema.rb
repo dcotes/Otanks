@@ -11,22 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117034114) do
+ActiveRecord::Schema.define(version: 20151117085558) do
 
-  create_table "locations", force: :cascade do |t|
+  create_table "patient_locations", force: :cascade do |t|
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.integer  "patient_id"
-    t.integer  "tank_id"
   end
-
-  add_index "locations", ["patient_id"], name: "index_locations_on_patient_id"
-  add_index "locations", ["tank_id"], name: "index_locations_on_tank_id"
-  add_index "locations", ["user_id"], name: "index_locations_on_user_id"
 
   create_table "patients", force: :cascade do |t|
     t.string   "first_name"
@@ -40,10 +33,16 @@ ActiveRecord::Schema.define(version: 20151117034114) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "serial_number"
-    t.integer  "location_id"
+    t.string   "capacity"
   end
 
-  add_index "tanks", ["location_id"], name: "index_tanks_on_location_id"
+  create_table "user_locations", force: :cascade do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

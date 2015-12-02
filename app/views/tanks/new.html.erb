@@ -1,1 +1,8 @@
 <h1>New Tank</h1>
+
+  <%= form_for(@tank) do |f| %>  
+      <%= f.label :capacity %><br> 
+      <%= f.text_area :serial_number %> 
+      <%= f.submit "Create" %> 
+
+  <% end %>

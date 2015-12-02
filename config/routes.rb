@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :user_locations
+  resources :patient_locations
   get 'sessions/new'
 
-  resources :locations
-  resources :tanks
+  resources :locations, :tanks, :users, :visits, :patients
   get 'welcome/index'
 
   # Authentication 
@@ -14,6 +15,19 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   post 'users' => 'users#create'
 
+  # tank methods
+  
+  # location methods
+
+  # user methods
+
+  # visit methods
+
+  # patient methods
+
+
+
+  # post 'tanks/create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

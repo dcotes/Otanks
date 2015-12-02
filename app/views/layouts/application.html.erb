@@ -11,6 +11,13 @@
 
 <% if current_user %>
   Signed in as <%= current_user.username %> | <%= link_to "Create New User", 'signup' %>| <%= link_to "Logout", '/logout' %>
+  <br/>
+
+  
+<!-- <button type="button">Add Oxygen Tank</button> -->
+<!-- <button type="button">Remove Oxygen Tank</button> -->
+
+
 <% else %>
   <%= link_to "Login", "/login" %>
 <% end %>
