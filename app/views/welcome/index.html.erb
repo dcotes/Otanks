@@ -17,7 +17,7 @@
         <tr>
         <% @patients.each do |patient| %> 
             <td><%= patient.first_name %><%= patient.last_name %></td>
-            <td><%= patient.location.address %></td>
+            <td><%= patient.patient_location.address %></td>
             <td>
               <ul>
               <% patient.location.tanks.each do |tank| %>
